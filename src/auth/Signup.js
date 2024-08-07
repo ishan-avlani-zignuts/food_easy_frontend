@@ -14,10 +14,10 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [pic, setPic] = useState("");
   const [picLoading, setPicLoading] = useState(false);
-  const [role, setRole] = useState("user"); 
-  const [tabIndex, setTabIndex] = useState(0); 
+  const [role, setRole] = useState("user");
+  const [tabIndex, setTabIndex] = useState(0);
 
-  const submitHandler = async () => {           
+  const submitHandler = async () => {
     setPicLoading(true);
     if (!firstname || !lastname || !email || !password) {
       console.log("Please fill all fields");
@@ -175,14 +175,14 @@ const Signup = () => {
             sx={{
               marginBottom: "20px",
               "& .MuiTab-root": {
-                color: "black", 
+                color: "black",
               },
               "& .Mui-selected": {
                 color: "black",
-                backgroundColor:"wheat" 
+                backgroundColor: "wheat",
               },
               "& .MuiTabs-flexContainer": {
-                justifyContent: "center", 
+                justifyContent: "center",
               },
             }}
           >
