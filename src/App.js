@@ -25,7 +25,7 @@ import AdminManageProfile from "./views/adminviews/AdminManageProfile";
 function App() {
   const [theme] = useMode();
 
-  const [cartLength, setCartLength] = useState(0);
+  const [ setCartLength] = useState(0);
   return (
     <AuthProvider>
       <ThemeProvider theme={theme}>

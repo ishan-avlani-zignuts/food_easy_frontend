@@ -82,7 +82,7 @@ const Home = () => {
       const decodedToken = JSON.parse(atob(token.split(".")[1]));
       const userId = decodedToken._id;
 
-      const response = await axios.post(
+     await axios.post(
         "http://localhost:5000/api/cart/addtocart",
         {
           userId: userId,

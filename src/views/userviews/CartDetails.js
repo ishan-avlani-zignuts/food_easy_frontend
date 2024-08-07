@@ -46,6 +46,7 @@ const CartDetails = ({ onCartChange }) => {
 
   useEffect(() => {
     fetchCart();
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleIncrement = async (item) => {

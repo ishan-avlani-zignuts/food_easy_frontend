@@ -89,6 +89,7 @@ const ViewPastOrders = () => {
 useEffect(() => {
   console.log("Fetching orders...");
   fetchOrders();
+  //eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
   return (
