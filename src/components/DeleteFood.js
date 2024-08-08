@@ -5,7 +5,9 @@ import axios from 'axios';
 const DeleteFood = ({ foodId, onClose }) => {
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/deletefood/${foodId}`);
+      await axios.delete(
+        `https://food-easy-vp5t.onrender.com/api/admin/deletefood/${foodId}`
+      );
       onClose();
     } catch (error) {
       console.error("Error deleting food item:", error);

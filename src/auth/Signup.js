@@ -32,7 +32,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "http://localhost:5000/api/users",
+        "https://food-easy-vp5t.onrender.com/api/users",
         {
           firstname,
           lastname,

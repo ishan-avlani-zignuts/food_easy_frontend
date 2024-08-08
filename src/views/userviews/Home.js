@@ -45,7 +45,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/admin/getfood"
+          "https://food-easy-vp5t.onrender.com/api/admin/getfood"
         );
         setCartData(response.data);
         setLoading(false);
@@ -64,7 +64,7 @@ const Home = () => {
           const decodedToken = JSON.parse(atob(token.split(".")[1]));
           const userId = decodedToken._id;
           const response = await axios.get(
-            `http://localhost:5000/api/cart/${userId}`
+            `https://food-easy-vp5t.onrender.com/api/cart/${userId}`
           );
           setCartLength(response.data.length);
         }
@@ -83,12 +83,12 @@ const Home = () => {
       const userId = decodedToken._id;
 
      await axios.post(
-        "http://localhost:5000/api/cart/addtocart",
-        {
-          userId: userId,
-          foodId: item._id,
-        }
-      );
+       "https://food-easy-vp5t.onrender.com/api/cart/addtocart",
+       {
+         userId: userId,
+         foodId: item._id,
+       }
+     );
       setCartLength((prev) => prev + 1);
       toast.success("Item added to your cart");
     } catch (error) {
@@ -147,7 +147,7 @@ const Home = () => {
             >
               <CardMedia
                 component="img"
-                image={`http://localhost:5000/${element.imgdata}`}
+                image={`https://food-easy-vp5t.onrender.com/${element.imgdata}`}
                 alt={element.dish}
                 sx={{ width: "100%", height: 200 }}
               />

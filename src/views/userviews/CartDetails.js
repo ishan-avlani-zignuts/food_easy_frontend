@@ -28,7 +28,7 @@ const CartDetails = ({ onCartChange }) => {
   const fetchCart = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/cart/getcart/${userId}`
+        `https://food-easy-vp5t.onrender.com/api/cart/getcart/${userId}`
       );
       const data = await response.json();
       if (response.ok) {
@@ -51,11 +51,14 @@ const CartDetails = ({ onCartChange }) => {
 
   const handleIncrement = async (item) => {
     try {
-      const response = await fetch("http://localhost:5000/api/cart/addtocart", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId, foodId: item.foodId._id }),
-      });
+      const response = await fetch(
+        "https://food-easy-vp5t.onrender.com/api/cart/addtocart",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ userId, foodId: item.foodId._id }),
+        }
+      );
       const data = await response.json();
       if (response.ok) {
         setCarts(data.items);
@@ -76,7 +79,7 @@ const CartDetails = ({ onCartChange }) => {
         await removeFromCart(item);
       } else {
         const response = await fetch(
-          "http://localhost:5000/api/cart/updatecart",
+          "https://food-easy-vp5t.onrender.com/api/cart/updatecart",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -105,7 +108,7 @@ const CartDetails = ({ onCartChange }) => {
   const removeFromCart = async (item) => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/cart/removefromcart",
+        "https://food-easy-vp5t.onrender.com/api/cart/removefromcart",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -172,11 +175,14 @@ const CartDetails = ({ onCartChange }) => {
       };
 
       const headers = { "Content-Type": "application/json" };
-      const response = await fetch("http://localhost:5000/api/checkout", {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(body),
-      });
+      const response = await fetch(
+        "https://food-easy-vp5t.onrender.com/api/checkout",
+        {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify(body),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to create Stripe Checkout session");

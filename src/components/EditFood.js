@@ -15,7 +15,7 @@ const EditFood = ({ foodId, onClose }) => {
     const fetchFoodData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/admin/getfood/${foodId}`
+          `https://food-easy-vp5t.onrender.com/api/admin/getfood/${foodId}`
         );
         setFoodData(response.data);
       } catch (error) {
@@ -37,7 +37,7 @@ const EditFood = ({ foodId, onClose }) => {
   const handleSave = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/editfood/${foodId}`,
+        `https://food-easy-vp5t.onrender.com/api/admin/editfood/${foodId}`,
         foodData
       );
       onClose();

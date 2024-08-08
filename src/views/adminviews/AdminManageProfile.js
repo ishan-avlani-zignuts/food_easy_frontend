@@ -25,7 +25,7 @@ const AdminManageProfile = () => {
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/users/${userId}`
+          `https://food-easy-vp5t.onrender.com/api/users/${userId}`
         );
         const data = await response.json();
         if (response.ok) {
@@ -98,7 +98,7 @@ const handleSave = async () => {
 
   try {
     const response = await axios.put(
-      `http://localhost:5000/api/users/${userId}`,
+      `https://food-easy-vp5t.onrender.com/api/users/${userId}`,
       updatedUser
     );
     if (response.status === 200) {

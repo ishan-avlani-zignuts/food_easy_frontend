@@ -53,7 +53,7 @@ const UserSidebar = () => {
       try {
         console.log("userId in cart ", userId);
         const response = await fetch(
-          `http://localhost:5000/api/users/${userId}`
+          `https://food-easy-vp5t.onrender.com/api/users/${userId}`
         );
         const data = await response.json();
         console.log("user data", data);

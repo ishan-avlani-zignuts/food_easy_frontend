@@ -54,7 +54,7 @@ const ManageFood = () => {
     const fetchContacts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/admin/getfood"
+          "https://food-easy-vp5t.onrender.com/api/admin/getfood"
         );
         const formattedData = response.data.map((food) => ({
           id: food._id,

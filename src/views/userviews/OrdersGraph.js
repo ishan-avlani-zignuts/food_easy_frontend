@@ -59,7 +59,7 @@ const OrdersGraph = () => {
       console.log("user id", userId);
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/order/getordersbyid/${userId}`
+          `https://food-easy-vp5t.onrender.com/api/order/getordersbyid/${userId}`
         );
         const data = response.data;
         console.log("data", data);

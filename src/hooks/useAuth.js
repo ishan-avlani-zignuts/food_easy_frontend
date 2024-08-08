@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (data) => {
     try {
-      const url = "http://localhost:5000/api/auth";
+      const url = "https://food-easy-vp5t.onrender.com/api/auth";
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.data);
       const decodedToken = jwtDecode(res.data);

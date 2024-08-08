@@ -19,7 +19,7 @@ const AdminDashboard = () => {
   const fetchAllOrders = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/order/getallorders"
+        "https://food-easy-vp5t.onrender.com/api/order/getallorders"
       );
       const orders = response.data;
       console.log("orders",orders)
@@ -52,7 +52,7 @@ const AdminDashboard = () => {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/users"
+        "https://food-easy-vp5t.onrender.com/api/users"
       );
       const users = response.data;
       console.log("users", users);

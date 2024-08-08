@@ -37,7 +37,7 @@ const ViewAllOrders = () => {
   const fetchOrders = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/order/getallorders`
+        `https://food-easy-vp5t.onrender.com/api/order/getallorders`
       );
       const data = response.data;
       const formattedData = data.map((order) => ({

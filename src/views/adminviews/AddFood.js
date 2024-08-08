@@ -20,7 +20,7 @@ const Add = () => {
     formData.append("rating", values.rating);
 
     try {
-      const url = "http://localhost:5000/api/admin/addfood";
+      const url = "https://food-easy-vp5t.onrender.com/api/admin/addfood";
       const { data: res } = await axios.post(url, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
