@@ -56,37 +56,62 @@ const AdminManageProfile = () => {
     });
   };
 
-  const handleSave = async () => {
-    const token = localStorage.getItem("token");
-    const decodedToken = JSON.parse(atob(token.split(".")[1]));
-    const userId = decodedToken._id;
+  // const handleSave = async () => {
+  //   const token = localStorage.getItem("token");
+  //   const decodedToken = JSON.parse(atob(token.split(".")[1]));
+  //   const userId = decodedToken._id;
 
-    let updatedUser = { ...editableUser };
-    if (editableUser.password === "") {
-      delete updatedUser.password;
+  //   let updatedUser = { ...editableUser };
+  //   if (editableUser.password === "") {
+  //     delete updatedUser.password;
+  //   } else {
+  //     const bcrypt = require('bcryptjs');
+  //     const salt = bcrypt.genSaltSync(10);
+  //     updatedUser.password = bcrypt.hashSync(editableUser.password, salt);
+  //   }
+
+  //   try {
+  //     const response = await axios.put(
+  //       `http://localhost:5000/api/users/${userId}`,
+  //       updatedUser
+  //     );
+  //     if (response.status === 200) {
+  //       setUser(response.data);
+  //       setIsEditable(false);
+  //       toast.success("user updated successfully");
+  //     } else {
+  //       toast.error("Failed to update user:", response.data.message);
+  //     }
+  //   } catch (error) {
+  //     toast.error("Error updating user:", error);
+  //   }
+  // };
+const handleSave = async () => {
+  const token = localStorage.getItem("token");
+  const decodedToken = JSON.parse(atob(token.split(".")[1]));
+  const userId = decodedToken._id;
+
+  let updatedUser = { ...editableUser };
+  if (editableUser.password === "") {
+    delete updatedUser.password;
+  }
+
+  try {
+    const response = await axios.put(
+      `http://localhost:5000/api/users/${userId}`,
+      updatedUser
+    );
+    if (response.status === 200) {
+      setUser(response.data);
+      setIsEditable(false);
+      toast.success("User updated successfully");
     } else {
-      const bcrypt = require('bcryptjs');
-      const salt = bcrypt.genSaltSync(10);
-      updatedUser.password = bcrypt.hashSync(editableUser.password, salt);
+      toast.error("Failed to update user: " + response.data.message);
     }
-
-    try {
-      const response = await axios.put(
-        `http://localhost:5000/api/users/${userId}`,
-        updatedUser
-      );
-      if (response.status === 200) {
-        setUser(response.data);
-        setIsEditable(false);
-        toast.success("user updated successfully");
-      } else {
-        toast.error("Failed to update user:", response.data.message);
-      }
-    } catch (error) {
-      toast.error("Error updating user:", error);
-    }
-  };
-
+  } catch (error) {
+    toast.error("Error updating user: " + error.message);
+  }
+};
   const postDetails = (pics) => {
     setPicLoading(true);
     if (pics === undefined) {
