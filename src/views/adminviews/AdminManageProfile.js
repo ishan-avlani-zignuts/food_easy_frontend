@@ -65,7 +65,7 @@ const AdminManageProfile = () => {
     if (editableUser.password === "") {
       delete updatedUser.password;
     } else {
-      const bcrypt = require("bcryptjs");
+      const bcrypt = require('bcryptjs');
       const salt = bcrypt.genSaltSync(10);
       updatedUser.password = bcrypt.hashSync(editableUser.password, salt);
     }
