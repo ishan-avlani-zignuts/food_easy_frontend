@@ -1,7 +1,7 @@
 import { Box, TextField, Button, Typography, Container } from "@mui/material";
 import { MdModeEdit } from "react-icons/md";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from 'axios';
 import { FaSave } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

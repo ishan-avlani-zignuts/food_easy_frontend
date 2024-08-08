@@ -3,7 +3,7 @@ import { tokens } from "../../theme";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import BarChart from "../../components/BarChart"; 
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from 'axios';
 import Headers from "../../components/Headers";
 import StatBox from "../../components/StatBox";
 import GroupIcon from "@mui/icons-material/Group";

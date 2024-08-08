@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Modal, Button, Typography } from "@mui/material";
-import axios from "axios";
+import axios from 'axios';
 
 const DeleteFood = ({ foodId, onClose }) => {
   const handleDelete = async () => {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Box, Modal, TextField, Button } from "@mui/material";
-import axios from "axios";
+import axios from 'axios';
 
 const EditFood = ({ foodId, onClose }) => {
   const [foodData, setFoodData] = useState({

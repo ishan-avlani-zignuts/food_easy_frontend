@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Modal, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import axios from "axios";
+import axios from 'axios';
 import { tokens } from "../../theme";
 import Invoice from "../../components/Invoice";
 

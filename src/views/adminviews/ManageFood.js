@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, useTheme, IconButton, Typography } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import axios from "axios";
+import axios from 'axios';
 import { tokens } from "../../theme";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
